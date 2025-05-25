@@ -24,9 +24,9 @@ const PainPointSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid md:grid-cols-2 gap-8 items-stretch">
             {/* Problem Side */}
-            <div className="bg-red-500/10 backdrop-blur-sm rounded-2xl p-8 border border-red-400/30">
+            <div className="bg-red-500/10 backdrop-blur-sm rounded-2xl p-8 border border-red-400/30 flex flex-col h-full">
               <div className="text-center mb-6">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100/20 rounded-full mb-4">
                   <TrendingDown className="w-8 h-8 text-red-300" />
@@ -36,7 +36,7 @@ const PainPointSection = () => {
                 </h3>
                 <p className="text-red-300 font-semibold">Every missed appointment hurts</p>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-4 flex-grow">
                 <div className="flex items-center gap-3">
                   <X className="w-5 h-5 text-red-400 flex-shrink-0" />
                   <span className="text-red-200">Lost revenue from no-shows</span>
@@ -57,7 +57,7 @@ const PainPointSection = () => {
             </div>
 
             {/* Solution Side */}
-            <div className="bg-green-500/10 backdrop-blur-sm rounded-2xl p-8 border border-green-400/30">
+            <div className="bg-green-500/10 backdrop-blur-sm rounded-2xl p-8 border border-green-400/30 flex flex-col h-full">
               <div className="text-center mb-6">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100/20 rounded-full mb-4">
                   <TrendingUp className="w-8 h-8 text-green-300" />
@@ -67,7 +67,7 @@ const PainPointSection = () => {
                 </h3>
                 <p className="text-green-300 font-semibold">Automated revenue recovery</p>
               </div>
-              <div className="space-y-4 mb-6">
+              <div className="space-y-4 mb-6 flex-grow">
                 <div className="flex items-center gap-3">
                   <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
                   <span className="text-green-200">Automated smart outreach</span>

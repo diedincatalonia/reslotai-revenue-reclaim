@@ -12,14 +12,16 @@ const HowItWorksSection = () => {
       title: "Automated Email Recovery",
       description: "AI sends personalized recovery emails based on cancellations.",
       example: "We noticed you cancelled — here's 10% off to get back on track!",
-      highlight: "Business owners can set logic like 'if price is the reason, offer discount.'"
+      highlight: "Business owners can set logic like 'if price is the reason, offer discount.'",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop"
     },
     {
       icon: "💬",
       title: "Smart SMS",
       description: "Intelligent text messaging that responds to customer needs.",
       example: "Hi Jess! We saw you missed your appointment. We have a spot tomorrow at 3PM. Want it?",
-      highlight: "Customer replies 'Yes,' and ReslotAI reschedules automatically."
+      highlight: "Customer replies 'Yes,' and ReslotAI reschedules automatically.",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop"
     },
     {
       icon: "📋",
@@ -75,24 +77,45 @@ const HowItWorksSection = () => {
         </div>
 
         {/* Slide Content */}
-        <div className="relative bg-white rounded-2xl shadow-xl p-8 md:p-12 max-w-4xl mx-auto">
-          <div className="text-center">
-            <div className="text-6xl mb-6">{slides[currentSlide].icon}</div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-4 font-inter">
-              {slides[currentSlide].title}
-            </h3>
-            <p className="text-lg text-gray-600 mb-8 font-inter">
-              {slides[currentSlide].description}
-            </p>
-            
-            <div className="bg-blue-50 rounded-xl p-6 mb-6">
-              <h4 className="font-semibold text-blue-900 mb-2">Example:</h4>
-              <p className="text-blue-800 italic">"{slides[currentSlide].example}"</p>
+        <div className="relative bg-white rounded-2xl shadow-xl p-8 md:p-12 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            {/* Content Side */}
+            <div className="text-center md:text-left">
+              <div className="text-6xl mb-6 md:text-left">{slides[currentSlide].icon}</div>
+              <h3 className="text-3xl font-bold text-gray-900 mb-4 font-inter">
+                {slides[currentSlide].title}
+              </h3>
+              <p className="text-lg text-gray-600 mb-8 font-inter">
+                {slides[currentSlide].description}
+              </p>
+              
+              <div className="bg-blue-50 rounded-xl p-6 mb-6">
+                <h4 className="font-semibold text-blue-900 mb-2">Example:</h4>
+                <p className="text-blue-800 italic">"{slides[currentSlide].example}"</p>
+              </div>
+              
+              <div className="bg-green-50 rounded-xl p-6">
+                <h4 className="font-semibold text-green-900 mb-2">Key Feature:</h4>
+                <p className="text-green-800">{slides[currentSlide].highlight}</p>
+              </div>
             </div>
-            
-            <div className="bg-green-50 rounded-xl p-6">
-              <h4 className="font-semibold text-green-900 mb-2">Key Feature:</h4>
-              <p className="text-green-800">{slides[currentSlide].highlight}</p>
+
+            {/* Image Side */}
+            <div className="order-first md:order-last">
+              {slides[currentSlide].image ? (
+                <div className="relative">
+                  <img
+                    src={slides[currentSlide].image}
+                    alt={`${slides[currentSlide].title} example`}
+                    className="w-full h-80 object-cover rounded-xl shadow-lg"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>
+                </div>
+              ) : (
+                <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl h-80 flex items-center justify-center">
+                  <div className="text-6xl opacity-30">{slides[currentSlide].icon}</div>
+                </div>
+              )}
             </div>
           </div>
         </div>
