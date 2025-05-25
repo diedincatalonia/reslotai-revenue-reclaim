@@ -2,157 +2,193 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Check, Star } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
   const { toast } = useToast();
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const handleEmailSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
       toast({
         title: "Success!",
-        description: "You've been subscribed to our newsletter.",
+        description: "We'll be in touch soon to start your revenue recovery.",
       });
       setEmail('');
     }
   };
 
-  const footerLinks = {
-    Product: [
-      { name: 'Features', href: '#features' },
-      { name: 'Pricing', href: '#pricing' },
-      { name: 'Results', href: '#results' }
-    ],
-    Resources: [
-      { name: 'Blog', href: '#' },
-      { name: 'Help Center', href: '#' },
-      { name: 'Terms', href: '#' }
-    ],
-    Company: [
-      { name: 'About Us', href: '#' },
-      { name: 'Careers', href: '#' },
-      { name: 'Contact', href: '#' }
-    ]
-  };
-
-  const socialLinks = [
-    { name: 'LinkedIn', href: '#', icon: '💼' },
-    { name: 'Twitter', href: '#', icon: '🐦' },
-    { name: 'Facebook', href: '#', icon: '📘' }
-  ];
-
   return (
-    <footer className="bg-gray-900 text-white py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-5 gap-8">
-          {/* Product Links */}
-          <div>
-            <h4 className="font-semibold text-lg mb-4 font-inter">Product</h4>
-            <ul className="space-y-3">
-              {footerLinks.Product.map((link, index) => (
-                <li key={index}>
-                  <a 
-                    href={link.href} 
-                    className="text-gray-400 hover:text-white transition-colors"
-                    aria-label={`Navigate to ${link.name}`}
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <>
+      {/* Final CTA Section */}
+      <section className="py-20 bg-gradient-hero text-white relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-400/10 rounded-full blur-xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-purple-400/10 rounded-full blur-xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Main value proposition recap */}
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-inter">
+              Ready to Stop Losing Money on Cancellations?
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-200 mb-8 font-inter">
+              Join 150+ businesses recovering lost revenue automatically with ReslotAI
+            </p>
 
-          {/* Resources Links */}
-          <div>
-            <h4 className="font-semibold text-lg mb-4 font-inter">Resources</h4>
-            <ul className="space-y-3">
-              {footerLinks.Resources.map((link, index) => (
-                <li key={index}>
-                  <a 
-                    href={link.href} 
-                    className="text-gray-400 hover:text-white transition-colors"
-                    aria-label={`Navigate to ${link.name}`}
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Key benefits recap */}
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                <div className="flex items-center justify-center w-12 h-12 bg-green-100/20 rounded-full mb-4 mx-auto">
+                  <Check className="w-6 h-6 text-green-300" />
+                </div>
+                <h3 className="font-semibold text-lg mb-2">35% Recovery Rate</h3>
+                <p className="text-gray-300">Automatically recover lost appointments</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                <div className="flex items-center justify-center w-12 h-12 bg-blue-100/20 rounded-full mb-4 mx-auto">
+                  <Check className="w-6 h-6 text-blue-300" />
+                </div>
+                <h3 className="font-semibold text-lg mb-2">5-Minute Setup</h3>
+                <p className="text-gray-300">Get started in minutes, not hours</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+                <div className="flex items-center justify-center w-12 h-12 bg-purple-100/20 rounded-full mb-4 mx-auto">
+                  <Check className="w-6 h-6 text-purple-300" />
+                </div>
+                <h3 className="font-semibold text-lg mb-2">Zero Manual Work</h3>
+                <p className="text-gray-300">Fully automated smart outreach</p>
+              </div>
+            </div>
 
-          {/* Company Links */}
-          <div>
-            <h4 className="font-semibold text-lg mb-4 font-inter">Company</h4>
-            <ul className="space-y-3">
-              {footerLinks.Company.map((link, index) => (
-                <li key={index}>
-                  <a 
-                    href={link.href} 
-                    className="text-gray-400 hover:text-white transition-colors"
-                    aria-label={`Navigate to ${link.name}`}
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* CTA Section */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-12">
+              <h3 className="text-2xl font-bold mb-4 font-inter">
+                Start Your Free Trial Today
+              </h3>
+              <p className="text-gray-200 mb-6">
+                No setup fees. No long-term contracts. Cancel anytime.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+                <Button 
+                  size="lg" 
+                  className="bg-white text-blue-900 hover:bg-gray-100 font-semibold px-8 py-4 text-lg transition-all transform hover:scale-105"
+                  aria-label="Start your free trial"
+                >
+                  Start Free Trial
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-white text-white hover:bg-white hover:text-blue-900 font-semibold px-8 py-4 text-lg transition-all transform hover:scale-105"
+                  aria-label="Schedule a demo"
+                >
+                  Schedule Demo
+                </Button>
+              </div>
 
-          {/* Newsletter Signup */}
-          <div className="md:col-span-2">
-            <h4 className="font-semibold text-lg mb-4 font-inter">Stay Connected</h4>
-            <form onSubmit={handleNewsletterSubmit} className="mb-6">
-              <div className="flex gap-3">
+              {/* Email capture */}
+              <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                 <Input
                   type="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 bg-gray-800 border-gray-700 text-white placeholder:text-gray-400"
+                  className="flex-1 bg-white/20 border-white/30 text-white placeholder:text-gray-300"
                   required
-                  aria-label="Email address for newsletter"
+                  aria-label="Email address"
                 />
                 <Button 
                   type="submit"
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-semibold"
-                  aria-label="Subscribe to newsletter"
+                  className="bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:opacity-90 font-semibold px-6"
+                  aria-label="Get started"
                 >
-                  Subscribe
+                  Get Started
                 </Button>
-              </div>
-            </form>
+              </form>
+            </div>
 
-            {/* Social Icons */}
-            <div className="flex gap-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors text-xl"
-                  aria-label={`Follow us on ${social.name}`}
-                >
-                  {social.icon}
-                </a>
-              ))}
+            {/* Trust badges and social proof */}
+            <div className="space-y-8">
+              {/* Customer rating */}
+              <div className="text-center">
+                <div className="flex justify-center items-center gap-2 mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
+                  <span className="text-lg font-semibold ml-2">4.9/5</span>
+                </div>
+                <p className="text-gray-300">Rated by 150+ happy customers</p>
+              </div>
+
+              {/* Trust badges */}
+              <div>
+                <p className="text-gray-300 text-sm mb-4">Trusted by industry leaders</p>
+                <div className="flex flex-wrap justify-center items-center gap-6 opacity-70">
+                  {['TechCorp', 'HealthPlus', 'BeautyMax', 'FitZone', 'ServicePro', 'WellnessCo'].map((company, index) => (
+                    <div key={index} className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+                      <span className="text-white font-medium text-sm">{company}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Final guarantee */}
+              <div className="bg-green-500/10 border border-green-400/30 rounded-lg p-4 max-w-2xl mx-auto">
+                <p className="text-green-200 font-semibold">
+                  💡 30-day money-back guarantee. Setup takes 5 minutes. Cancel anytime.
+                </p>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="font-ibm font-bold text-2xl mb-4 md:mb-0">
-            ReslotAI
+      {/* Traditional Footer */}
+      <footer className="bg-white py-12 border-t">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-lg font-bold text-gray-900 mb-4">ReslotAI</h3>
+              <p className="text-gray-600">
+                Automated revenue recovery for appointment-based businesses.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-4">Product</h4>
+              <ul className="space-y-2 text-gray-600">
+                <li>Features</li>
+                <li>Pricing</li>
+                <li>Integrations</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-4">Company</h4>
+              <ul className="space-y-2 text-gray-600">
+                <li>About</li>
+                <li>Contact</li>
+                <li>Support</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-4">Legal</h4>
+              <ul className="space-y-2 text-gray-600">
+                <li>Privacy Policy</li>
+                <li>Terms of Service</li>
+              </ul>
+            </div>
           </div>
-          <div className="text-gray-400 text-center md:text-right">
+          <div className="border-t mt-8 pt-8 text-center text-gray-600">
             <p>&copy; 2024 ReslotAI. All rights reserved.</p>
-            <p className="mt-1">Reclaim revenue from cancellations — with zero lift.</p>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 };
 

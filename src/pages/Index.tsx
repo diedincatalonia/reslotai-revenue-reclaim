@@ -7,7 +7,7 @@ import HowItWorksSection from '@/components/HowItWorksSection';
 import RevenueCalculator from '@/components/RevenueCalculator';
 import ResultsSection from '@/components/ResultsSection';
 import PricingSection from '@/components/PricingSection';
-import FinalHeroSection from '@/components/FinalHeroSection';
+import ComparisonSection from '@/components/ComparisonSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -16,12 +16,12 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <PainPointSection />
         <HowItWorksSection />
+        <PainPointSection />
         <RevenueCalculator />
         <ResultsSection />
+        <ComparisonSection />
         <PricingSection />
-        <FinalHeroSection />
       </main>
       <Footer />
     </div>
