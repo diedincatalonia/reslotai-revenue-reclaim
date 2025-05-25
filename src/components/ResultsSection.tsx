@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, Check, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const ResultsSection = () => {
@@ -129,88 +128,68 @@ const ResultsSection = () => {
           </div>
         </div>
 
-        {/* Comparison Table */}
-        <div className="max-w-5xl mx-auto">
+        {/* Split Screen Comparison */}
+        <div className="max-w-6xl mx-auto">
           <h3 className="text-3xl font-bold text-center mb-8 font-inter">Why Choose ReslotAI?</h3>
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden">
-            <div className="grid md:grid-cols-3 gap-0">
-              <div className="p-6 text-center border-r border-white/20">
-                <h4 className="font-bold text-xl mb-4 text-blue-400">ReslotAI</h4>
-                <ul className="space-y-3 text-sm">
-                  <li className="flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                    Personalized SMS & Email
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                    1-Click Smart Surveys
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                    Setup in 5 Minutes
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                    Cancellation Insight Dashboard
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                    Industry-Tailored Messaging
-                  </li>
-                </ul>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* ReslotAI Side */}
+            <div className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-8 border border-blue-400/30">
+              <div className="text-center mb-6">
+                <h4 className="font-bold text-2xl text-blue-400 mb-4">ReslotAI</h4>
+                <p className="text-green-400 font-semibold">The Smart Choice</p>
               </div>
-              
-              <div className="p-6 text-center border-r border-white/20">
-                <h4 className="font-bold text-xl mb-4 text-gray-400">Other Tools</h4>
-                <ul className="space-y-3 text-sm">
-                  <li className="flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 bg-red-400 rounded-full"></span>
-                    Generic Messages
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 bg-red-400 rounded-full"></span>
-                    No Smart Surveys
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 bg-red-400 rounded-full"></span>
-                    Slow Onboarding
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 bg-red-400 rounded-full"></span>
-                    No Insights
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 bg-red-400 rounded-full"></span>
-                    Lack Personalization
-                  </li>
-                </ul>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <span>Personalized SMS & Email</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <span>1-Click Smart Surveys</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <span>Setup in 5 Minutes</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <span>Cancellation Insights Dashboard</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <span>Industry-Tailored Messaging</span>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Other Tools Side */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/30">
+              <div className="text-center mb-6">
+                <h4 className="font-bold text-2xl text-gray-400 mb-4">Other Tools</h4>
+                <p className="text-red-400 font-semibold">Limited Solutions</p>
               </div>
-              
-              <div className="p-6 text-center">
-                <h4 className="font-bold text-xl mb-4 text-gray-400">Manual Process</h4>
-                <ul className="space-y-3 text-sm">
-                  <li className="flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 bg-red-400 rounded-full"></span>
-                    Time-Consuming
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 bg-red-400 rounded-full"></span>
-                    Inconsistent Follow-up
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 bg-red-400 rounded-full"></span>
-                    Human Error Prone
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 bg-red-400 rounded-full"></span>
-                    No Data Tracking
-                  </li>
-                  <li className="flex items-center justify-center gap-2">
-                    <span className="w-2 h-2 bg-red-400 rounded-full"></span>
-                    Limited Scalability
-                  </li>
-                </ul>
-              </div>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3">
+                  <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                  <span className="text-gray-400">Generic Messages</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                  <span className="text-gray-400">No Smart Surveys</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                  <span className="text-gray-400">Complex Setup Process</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                  <span className="text-gray-400">Limited Analytics</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                  <span className="text-gray-400">One-Size-Fits-All Approach</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

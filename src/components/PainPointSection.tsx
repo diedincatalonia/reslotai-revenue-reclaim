@@ -1,51 +1,106 @@
 
 import React from 'react';
-import { TrendingDown, TrendingUp } from 'lucide-react';
+import { TrendingDown, TrendingUp, X, Check } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const PainPointSection = () => {
   return (
-    <section className="py-20 bg-red-50">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-gradient-hero text-white relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 bg-black/20"></div>
+      <div className="absolute top-0 left-0 w-full h-full">
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-400/10 rounded-full blur-xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-purple-400/10 rounded-full blur-xl"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-inter">
+              Transform Your Revenue Recovery
+            </h2>
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+              Stop losing money on cancellations. Start recovering revenue automatically.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Problem Side */}
-            <div className="text-center md:text-left">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-red-100 rounded-full mb-6">
-                <TrendingDown className="w-10 h-10 text-red-600" />
+            <div className="bg-red-500/10 backdrop-blur-sm rounded-2xl p-8 border border-red-400/30">
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100/20 rounded-full mb-4">
+                  <TrendingDown className="w-8 h-8 text-red-300" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-red-200 mb-2 font-inter">
+                  The Problem
+                </h3>
+                <p className="text-red-300 font-semibold">Every missed appointment hurts</p>
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-red-800 mb-4 font-inter">
-                You're losing money with every missed appointment
-              </h3>
-              <div className="space-y-4 text-lg text-red-700">
-                <p>❌ Lost revenue from no-shows</p>
-                <p>❌ Wasted time slots that could be filled</p>
-                <p>❌ Manual follow-up eating into your day</p>
-                <p>❌ No insights into why customers cancel</p>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                  <span className="text-red-200">Lost revenue from no-shows</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                  <span className="text-red-200">Wasted time slots</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                  <span className="text-red-200">Manual follow-up overhead</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                  <span className="text-red-200">No insights into cancellation patterns</span>
+                </div>
               </div>
             </div>
 
             {/* Solution Side */}
-            <div className="text-center md:text-left">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
-                <TrendingUp className="w-10 h-10 text-green-600" />
+            <div className="bg-green-500/10 backdrop-blur-sm rounded-2xl p-8 border border-green-400/30">
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100/20 rounded-full mb-4">
+                  <TrendingUp className="w-8 h-8 text-green-300" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-green-200 mb-2 font-inter">
+                  The Solution
+                </h3>
+                <p className="text-green-300 font-semibold">Automated revenue recovery</p>
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-green-800 mb-4 font-inter">
-                ReslotAI brings those clients back — automatically
-              </h3>
-              <div className="space-y-4 text-lg text-green-700">
-                <p>✅ Save time with automated outreach</p>
-                <p>✅ Win revenue through smart recovery</p>
-                <p>✅ Focus on growth, not cancellations</p>
-                <p>✅ Understand your customers better</p>
-              </div>
-              <div className="mt-8">
-                <div className="bg-green-100 border-l-4 border-green-500 p-4 rounded">
-                  <p className="text-green-800 font-semibold">
-                    "Our clients recover an average of 35% of their cancelled appointments automatically."
-                  </p>
+              <div className="space-y-4 mb-6">
+                <div className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <span className="text-green-200">Automated smart outreach</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <span className="text-green-200">Intelligent rebooking system</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <span className="text-green-200">Focus on growth, not cancellations</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                  <span className="text-green-200">Deep customer insights</span>
                 </div>
               </div>
+              
+              <div className="bg-green-400/10 border border-green-400/30 p-4 rounded-lg">
+                <p className="text-green-200 font-semibold text-center">
+                  "Our clients recover an average of 35% of their cancelled appointments automatically."
+                </p>
+              </div>
             </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button 
+              size="lg" 
+              className="bg-white text-blue-900 hover:bg-blue-50 font-semibold px-8 py-3 text-lg"
+            >
+              Start Your Free Trial
+            </Button>
           </div>
         </div>
       </div>
