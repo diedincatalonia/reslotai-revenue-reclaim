@@ -39,40 +39,46 @@ const ResultsSection = () => {
   };
 
   return (
-    <section id="results" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="results" className="py-20 bg-gradient-hero text-white relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-400/10 rounded-full blur-xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-purple-400/10 rounded-full blur-xl"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         {/* Performance Highlights */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-gray-900 font-inter">
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-white font-inter">
             Data-Driven Results
           </h2>
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="text-center">
-              <div className="text-5xl font-bold text-blue-600 mb-2">150+</div>
-              <div className="text-xl text-gray-600">Businesses Served</div>
+              <div className="text-5xl font-bold text-blue-300 mb-2">150+</div>
+              <div className="text-xl text-gray-200">Businesses Served</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-green-600 mb-2">$76,728</div>
-              <div className="text-xl text-gray-600">Revenue Recovered</div>
+              <div className="text-5xl font-bold text-green-300 mb-2">$76,728</div>
+              <div className="text-xl text-gray-200">Revenue Recovered</div>
             </div>
             <div className="text-center">
-              <div className="text-5xl font-bold text-purple-600 mb-2">3.5x</div>
-              <div className="text-xl text-gray-600">Rescheduling Success vs Manual</div>
+              <div className="text-5xl font-bold text-purple-300 mb-2">3.5x</div>
+              <div className="text-xl text-gray-200">Rescheduling Success vs Manual</div>
             </div>
           </div>
         </div>
 
         {/* Testimonials Carousel */}
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-3xl font-bold text-center mb-8 text-gray-900 font-inter">What Our Customers Say</h3>
-          <div className="bg-gray-50 rounded-2xl p-8 md:p-12 border border-gray-200">
+          <h3 className="text-3xl font-bold text-center mb-8 text-white font-inter">What Our Customers Say</h3>
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/20">
             <div className="flex items-center justify-center mb-6">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
+                <Star key={i} className="w-6 h-6 text-yellow-300 fill-current" />
               ))}
             </div>
             
-            <blockquote className="text-xl md:text-2xl text-center mb-8 text-gray-900 font-inter italic">
+            <blockquote className="text-xl md:text-2xl text-center mb-8 text-white font-inter italic">
               "{testimonials[currentTestimonial].quote}"
             </blockquote>
             
@@ -83,9 +89,9 @@ const ResultsSection = () => {
                 className="w-16 h-16 rounded-full mr-4 object-cover"
               />
               <div className="text-left">
-                <div className="font-semibold text-lg text-gray-900">{testimonials[currentTestimonial].author}</div>
-                <div className="text-gray-600">{testimonials[currentTestimonial].role}</div>
-                <div className="text-blue-600">{testimonials[currentTestimonial].company}</div>
+                <div className="font-semibold text-lg text-white">{testimonials[currentTestimonial].author}</div>
+                <div className="text-gray-200">{testimonials[currentTestimonial].role}</div>
+                <div className="text-blue-300">{testimonials[currentTestimonial].company}</div>
               </div>
             </div>
           </div>
@@ -96,7 +102,7 @@ const ResultsSection = () => {
               variant="outline"
               size="sm"
               onClick={prevTestimonial}
-              className="p-2 border-gray-300 text-gray-600 hover:bg-gray-50"
+              className="p-2 border-white/30 text-white hover:bg-white/10 bg-transparent"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={20} />
@@ -108,7 +114,7 @@ const ResultsSection = () => {
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-3 h-3 rounded-full transition-colors ${
-                    currentTestimonial === index ? 'bg-blue-600' : 'bg-gray-300'
+                    currentTestimonial === index ? 'bg-white' : 'bg-white/30'
                   }`}
                   aria-label={`View testimonial ${index + 1}`}
                 />
@@ -119,7 +125,7 @@ const ResultsSection = () => {
               variant="outline"
               size="sm"
               onClick={nextTestimonial}
-              className="p-2 border-gray-300 text-gray-600 hover:bg-gray-50"
+              className="p-2 border-white/30 text-white hover:bg-white/10 bg-transparent"
               aria-label="Next testimonial"
             >
               <ChevronRight size={20} />

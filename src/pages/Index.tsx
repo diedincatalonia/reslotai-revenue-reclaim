@@ -7,7 +7,6 @@ import HowItWorksSection from '@/components/HowItWorksSection';
 import RevenueCalculator from '@/components/RevenueCalculator';
 import ResultsSection from '@/components/ResultsSection';
 import PricingSection from '@/components/PricingSection';
-import ComparisonSection from '@/components/ComparisonSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -20,7 +19,6 @@ const Index = () => {
         <PainPointSection />
         <RevenueCalculator />
         <ResultsSection />
-        <ComparisonSection />
         <PricingSection />
       </main>
       <Footer />
