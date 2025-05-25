@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { TrendingDown, TrendingUp, X, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -24,7 +23,8 @@ const PainPointSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 items-stretch">
+          {/* Problem vs Solution */}
+          <div className="grid md:grid-cols-2 gap-8 items-stretch mb-16">
             {/* Problem Side */}
             <div className="bg-red-500/10 backdrop-blur-sm rounded-2xl p-8 border border-red-400/30 flex flex-col h-full">
               <div className="text-center mb-6">
@@ -94,7 +94,65 @@ const PainPointSection = () => {
             </div>
           </div>
 
-          <div className="text-center mt-12">
+          {/* ReslotAI vs Other Tools */}
+          <div className="mb-12">
+            <h3 className="text-3xl font-bold text-center mb-8 font-inter">Why Choose ReslotAI?</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* ReslotAI Side */}
+              <div className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-2xl p-8 border border-blue-400/30">
+                <div className="text-center mb-6">
+                  <h4 className="font-bold text-2xl text-blue-400 mb-4">ReslotAI</h4>
+                  <p className="text-green-400 font-semibold">The Smart Choice</p>
+                </div>
+                <ul className="space-y-4">
+                  <li className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                    <span>Personalized SMS & Email</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                    <span>Smart Surveys & Insights</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                    <span>Setup in 5 Minutes</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                    <span>Industry-Tailored Messaging</span>
+                  </li>
+                </ul>
+              </div>
+              
+              {/* Other Tools Side */}
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-gray-600/30">
+                <div className="text-center mb-6">
+                  <h4 className="font-bold text-2xl text-gray-400 mb-4">Other Tools</h4>
+                  <p className="text-red-400 font-semibold">Limited Solutions</p>
+                </div>
+                <ul className="space-y-4">
+                  <li className="flex items-center gap-3">
+                    <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                    <span className="text-gray-400">Generic Messages</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                    <span className="text-gray-400">No Smart Surveys</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                    <span className="text-gray-400">Complex Setup Process</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <X className="w-5 h-5 text-red-400 flex-shrink-0" />
+                    <span className="text-gray-400">One-Size-Fits-All Approach</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
             <Button 
               size="lg" 
               className="bg-white text-blue-900 hover:bg-blue-50 font-semibold px-8 py-3 text-lg"
