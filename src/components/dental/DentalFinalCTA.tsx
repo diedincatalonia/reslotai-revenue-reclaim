@@ -1,0 +1,58 @@
+
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import { CheckCircle, Calendar, Calculator } from 'lucide-react';
+
+const DentalFinalCTA = () => {
+  return (
+    <section className="py-16 bg-gradient-hero text-white">
+      <div className="container mx-auto px-4 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl lg:text-5xl font-bold mb-6 font-ibm">
+            Stop Losing Revenue to Cancellations
+          </h2>
+          <p className="text-xl lg:text-2xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Join 500+ dental practices already recovering thousands in lost revenue every month
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <CheckCircle className="w-12 h-12 mx-auto mb-4 text-green-300" />
+              <h3 className="text-xl font-semibold mb-2">Proven Results</h3>
+              <p className="text-blue-100">65% average recovery rate</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <Calendar className="w-12 h-12 mx-auto mb-4 text-blue-300" />
+              <h3 className="text-xl font-semibold mb-2">Quick Setup</h3>
+              <p className="text-blue-100">Live in under 5 minutes</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <Calculator className="w-12 h-12 mx-auto mb-4 text-purple-300" />
+              <h3 className="text-xl font-semibold mb-2">Guaranteed ROI</h3>
+              <p className="text-blue-100">30-day money back guarantee</p>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 font-semibold px-8 py-4 text-lg">
+              Book Your Free Demo
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg"
+            >
+              Try the Revenue Calculator
+            </Button>
+          </div>
+
+          <div className="text-blue-200 text-sm">
+            ✓ No setup fees ✓ No long-term contracts ✓ HIPAA compliant ✓ 24/7 support
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default DentalFinalCTA;
