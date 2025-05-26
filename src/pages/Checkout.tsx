@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -9,10 +8,17 @@ import { toast } from 'sonner';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
-);
+// Initialize Supabase client with proper error handling
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+let supabase: any = null;
+
+if (supabaseUrl && supabaseAnonKey) {
+  supabase = createClient(supabaseUrl, supabaseAnonKey);
+} else {
+  console.warn('Supabase environment variables not configured');
+}
 
 const Checkout = () => {
   const [selectedPlan, setSelectedPlan] = useState('growth');
@@ -61,6 +67,13 @@ const Checkout = () => {
   const handleCheckout = async () => {
     setIsLoading(true);
     try {
+      if (!supabase) {
+        // Fallback for when Supabase is not configured
+        toast.success('Demo mode: Checkout would redirect to payment processor');
+        console.log('Checkout initiated:', { planType: selectedPlan, billingCycle });
+        return;
+      }
+
       const { data, error } = await supabase.functions.invoke('create-checkout', {
         body: { planType: selectedPlan, billingCycle }
       });
