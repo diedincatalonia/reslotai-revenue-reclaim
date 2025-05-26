@@ -45,6 +45,12 @@ const Header = () => {
           >
             How It Works
           </Link>
+          <Link 
+            to="/about-us"
+            className="text-gray-600 hover:text-gray-900 font-medium transition-colors"
+          >
+            About Us
+          </Link>
           <button 
             onClick={() => scrollToSection('pricing')}
             className="text-gray-600 hover:text-gray-900 font-medium transition-colors"
@@ -95,6 +101,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 How It Works
+              </Link>
+              <Link 
+                to="/about-us"
+                className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-left"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About Us
               </Link>
               <button 
                 onClick={() => scrollToSection('pricing')}
