@@ -65,13 +65,11 @@ const Header = () => {
           >
             Results
           </button>
-          <Button 
-            onClick={() => scrollToSection('hero')}
-            className="bg-gradient-cta text-white hover:opacity-90 transition-opacity"
-            aria-label="Start free trial"
-          >
-            Get Started
-          </Button>
+          <Link to="/checkout">
+            <Button className="bg-gradient-cta text-white hover:opacity-90 transition-opacity">
+              Get Started
+            </Button>
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -123,13 +121,11 @@ const Header = () => {
               >
                 Results
               </button>
-              <Button 
-                onClick={() => scrollToSection('hero')}
-                className="bg-gradient-cta text-white hover:opacity-90 transition-opacity w-full"
-                aria-label="Start free trial"
-              >
-                Get Started
-              </Button>
+              <Link to="/checkout" onClick={() => setIsMenuOpen(false)}>
+                <Button className="bg-gradient-cta text-white hover:opacity-90 transition-opacity w-full">
+                  Get Started
+                </Button>
+              </Link>
             </nav>
           </div>
         )}
