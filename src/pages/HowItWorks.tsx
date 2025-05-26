@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Play, Star, TrendingUp, Users, DollarSign, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Play, Star, TrendingUp, Users, DollarSign, ChevronLeft, ChevronRight, ClipboardList, MessageSquare, Mail, BarChart3, Eye, Target } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Header from '@/components/Header';
@@ -86,6 +86,105 @@ const HowItWorks = () => {
             <p className="text-xl md:text-2xl text-gray-200 mb-8 font-inter">
               See how businesses like yours are recovering thousands in lost revenue with ReslotAI
             </p>
+            
+            {/* Recovery Process Flow */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mt-12 border border-white/20">
+              <h3 className="text-2xl font-bold text-white mb-8">Our Smart Recovery Process</h3>
+              <div className="grid md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="bg-blue-500/20 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <ClipboardList className="w-8 h-8 text-blue-300" />
+                  </div>
+                  <h4 className="font-semibold text-white mb-2">Survey Sent</h4>
+                  <p className="text-gray-200 text-sm">AI instantly sends personalized survey to understand cancellation reason</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="bg-green-500/20 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <MessageSquare className="w-8 h-8 text-green-300" />
+                  </div>
+                  <h4 className="font-semibold text-white mb-2">SMS Follow-up</h4>
+                  <p className="text-gray-200 text-sm">Smart SMS with targeted offers based on cancellation reason</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="bg-purple-500/20 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <Mail className="w-8 h-8 text-purple-300" />
+                  </div>
+                  <h4 className="font-semibold text-white mb-2">Email Recovery</h4>
+                  <p className="text-gray-200 text-sm">If ignored, automated email sequence with personalized incentives</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="bg-yellow-500/20 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <BarChart3 className="w-8 h-8 text-yellow-300" />
+                  </div>
+                  <h4 className="font-semibold text-white mb-2">Full Insights</h4>
+                  <p className="text-gray-200 text-sm">Complete analytics dashboard showing patterns and recovery metrics</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Business Insights Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 font-inter">
+              Complete Business Intelligence
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              ReslotAI doesn't just recover revenue - it gives you unprecedented insights into your business patterns
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <Card className="border-blue-200 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <Eye className="w-8 h-8 text-blue-600 mr-3" />
+                  <h3 className="text-xl font-semibold text-gray-900">Cancellation Patterns</h3>
+                </div>
+                <p className="text-gray-600 mb-4">See exactly why customers cancel and when it happens most</p>
+                <ul className="text-sm text-gray-600 space-y-2">
+                  <li>• Peak cancellation times</li>
+                  <li>• Top cancellation reasons</li>
+                  <li>• Customer segments analysis</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-green-200 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <Target className="w-8 h-8 text-green-600 mr-3" />
+                  <h3 className="text-xl font-semibold text-gray-900">Recovery Success</h3>
+                </div>
+                <p className="text-gray-600 mb-4">Track which strategies work best for different customer types</p>
+                <ul className="text-sm text-gray-600 space-y-2">
+                  <li>• Response rates by channel</li>
+                  <li>• Offer effectiveness</li>
+                  <li>• Optimal timing insights</li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-purple-200 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center mb-4">
+                  <TrendingUp className="w-8 h-8 text-purple-600 mr-3" />
+                  <h3 className="text-xl font-semibold text-gray-900">Revenue Trends</h3>
+                </div>
+                <p className="text-gray-600 mb-4">Monitor your recovery performance and business growth</p>
+                <ul className="text-sm text-gray-600 space-y-2">
+                  <li>• Monthly recovery totals</li>
+                  <li>• ROI on recovery efforts</li>
+                  <li>• Customer lifetime value</li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
