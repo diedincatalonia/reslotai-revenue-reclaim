@@ -1,159 +1,183 @@
 
 import React, { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Calculator, DollarSign, TrendingUp } from 'lucide-react';
+import { Plus, Trash2, Edit } from 'lucide-react';
 
 const EducationRevenueCalculator = () => {
-  const [sessionPrice, setSessionPrice] = useState(150);
-  const [sessionsPerWeek, setSessionsPerWeek] = useState(40);
-  const [cancellationRate, setCancellationRate] = useState(15);
-  const [serviceName, setServiceName] = useState('Session');
+  const [services, setServices] = useState([
+    { name: 'Tutoring Session', price: 85, cancellations: 12 },
+    { name: 'Group Class', price: 45, cancellations: 8 }
+  ]);
 
-  const weeklyRevenue = sessionPrice * sessionsPerWeek;
-  const weeklyCancellations = (sessionsPerWeek * cancellationRate) / 100;
-  const weeklyLostRevenue = weeklyCancellations * sessionPrice;
-  const monthlyLostRevenue = weeklyLostRevenue * 4.33;
-  const yearlyLostRevenue = monthlyLostRevenue * 12;
-  const recoveryRate = 0.68;
-  const monthlyRecoveredRevenue = monthlyLostRevenue * recoveryRate;
-  const yearlyRecoveredRevenue = yearlyLostRevenue * recoveryRate;
+  const presetServices = [
+    { name: 'Tutoring Session', price: 85 },
+    { name: 'Group Class', price: 45 },
+    { name: 'Test Prep Session', price: 120 },
+    { name: 'Online Consultation', price: 65 },
+    { name: 'Workshop', price: 150 },
+    { name: 'Skill Assessment', price: 95 },
+    { name: 'Academic Coaching', price: 100 },
+    { name: 'Language Lesson', price: 75 },
+    { name: 'Music Lesson', price: 80 },
+    { name: 'Art Class', price: 70 },
+    { name: 'STEM Program', price: 110 }
+  ];
+
+  const addService = (serviceName: string, price: number) => {
+    setServices([...services, { name: serviceName, price, cancellations: 1 }]);
+  };
+
+  const removeService = (index: number) => {
+    setServices(services.filter((_, i) => i !== index));
+  };
+
+  const updateService = (index: number, field: string, value: string | number) => {
+    const updated = [...services];
+    updated[index] = { ...updated[index], [field]: value };
+    setServices(updated);
+  };
+
+  const calculateTotals = () => {
+    const totalLoss = services.reduce((sum, service) => 
+      sum + (service.price * service.cancellations), 0
+    );
+    const recoveryRate = 0.68;
+    const totalRecovery = Math.round(totalLoss * recoveryRate);
+    return { totalLoss, totalRecovery };
+  };
+
+  const { totalLoss, totalRecovery } = calculateTotals();
 
   return (
-    <section id="calculator" className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+    <section className="py-20 bg-gradient-hero">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-inter">
-            Calculate Your Lost Revenue from Student Cancellations
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-inter">
-            See how much revenue you could recover with automated rebooking
-          </p>
-        </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-inter">
+              Calculate Your Education Revenue Recovery
+            </h2>
+            <p className="text-xl text-gray-200 font-inter">
+              See how much revenue you could recover from cancelled classes and sessions
+            </p>
+          </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Calculator Inputs */}
-          <Card className="shadow-xl">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-2xl">
-                <Calculator className="w-8 h-8 text-blue-600" />
-                Your Education Business
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Service Name
-                </label>
-                <Input
-                  type="text"
-                  value={serviceName}
-                  onChange={(e) => setServiceName(e.target.value)}
-                  className="text-lg"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Average {serviceName} Price ($)
-                </label>
-                <Input
-                  type="number"
-                  value={sessionPrice}
-                  onChange={(e) => setSessionPrice(Number(e.target.value))}
-                  className="text-lg"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  {serviceName}s Per Week
-                </label>
-                <Input
-                  type="number"
-                  value={sessionsPerWeek}
-                  onChange={(e) => setSessionsPerWeek(Number(e.target.value))}
-                  className="text-lg"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Current Cancellation Rate (%)
-                </label>
-                <Input
-                  type="number"
-                  value={cancellationRate}
-                  onChange={(e) => setCancellationRate(Number(e.target.value))}
-                  className="text-lg"
-                />
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Results */}
-          <div className="space-y-6">
-            <Card className="shadow-xl border-red-200 bg-red-50">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl text-red-800">
-                  <DollarSign className="w-8 h-8 text-red-600" />
-                  Lost Revenue
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-700">Weekly lost revenue:</span>
-                  <span className="text-2xl font-bold text-red-600">
-                    ${weeklyLostRevenue.toLocaleString()}
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-700">Monthly lost revenue:</span>
-                  <span className="text-2xl font-bold text-red-600">
-                    ${monthlyLostRevenue.toLocaleString()}
-                  </span>
-                </div>
-                <div className="flex justify-between items-center border-t pt-4">
-                  <span className="text-gray-700 font-semibold">Yearly lost revenue:</span>
-                  <span className="text-3xl font-bold text-red-600">
-                    ${yearlyLostRevenue.toLocaleString()}
-                  </span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-xl border-green-200 bg-green-50">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl text-green-800">
-                  <TrendingUp className="w-8 h-8 text-green-600" />
-                  Revenue Recovery with ReslotAI
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="bg-green-100 p-4 rounded-lg mb-4">
-                  <p className="text-green-800 font-semibold text-center">
-                    68% average recovery rate for education providers
+          <div className="bg-white rounded-2xl p-8 md:p-12">
+            <div className="grid lg:grid-cols-2 gap-8">
+              {/* Calculator Form */}
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Your Education Services</h3>
+                  <p className="text-gray-600 text-sm mb-6">
+                    <Edit className="w-4 h-4 inline mr-1" />
+                    Click on any price or service name to edit it. Add your most common services and their typical cancellation rates.
                   </p>
                 </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-700">Monthly recovery:</span>
-                  <span className="text-2xl font-bold text-green-600">
-                    ${monthlyRecoveredRevenue.toLocaleString()}
-                  </span>
+                
+                {/* Current Services */}
+                <div className="space-y-4">
+                  {services.map((service, index) => (
+                    <div key={index} className="grid grid-cols-12 gap-3 items-center p-4 bg-gray-50 rounded-lg">
+                      <div className="col-span-4">
+                        <Input
+                          value={service.name}
+                          onChange={(e) => updateService(index, 'name', e.target.value)}
+                          placeholder="Service name"
+                          className="text-sm"
+                        />
+                      </div>
+                      <div className="col-span-3">
+                        <Input
+                          type="number"
+                          value={service.price}
+                          onChange={(e) => updateService(index, 'price', Number(e.target.value))}
+                          placeholder="Price"
+                          className="text-sm"
+                        />
+                      </div>
+                      <div className="col-span-3">
+                        <Input
+                          type="number"
+                          value={service.cancellations}
+                          onChange={(e) => updateService(index, 'cancellations', Number(e.target.value))}
+                          placeholder="Monthly cancellations"
+                          className="text-sm"
+                        />
+                      </div>
+                      <div className="col-span-2">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={() => removeService(index)}
+                          className="w-full"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </Button>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div className="flex justify-between items-center border-t pt-4">
-                  <span className="text-gray-700 font-semibold">Yearly recovery:</span>
-                  <span className="text-3xl font-bold text-green-600">
-                    ${yearlyRecoveredRevenue.toLocaleString()}
-                  </span>
-                </div>
-                <div className="bg-blue-100 p-4 rounded-lg mt-4">
-                  <p className="text-blue-800 font-semibold text-center">
-                    ROI: {Math.round((yearlyRecoveredRevenue / 1800) * 100)}x return on investment
+
+                {/* Add Service Buttons */}
+                <div>
+                  <h4 className="font-semibold text-gray-700 mb-3">Quick Add Services:</h4>
+                  <div className="grid grid-cols-2 gap-2">
+                    {presetServices.map((preset, index) => (
+                      <Button
+                        key={index}
+                        variant="outline"
+                        size="sm"
+                        onClick={() => addService(preset.name, preset.price)}
+                        className="text-xs justify-start"
+                        disabled={services.some(s => s.name === preset.name)}
+                      >
+                        <Plus className="w-3 h-3 mr-1" />
+                        {preset.name} (${preset.price})
+                      </Button>
+                    ))}
+                  </div>
+                  <p className="text-xs text-gray-500 mt-2">
+                    💡 Tip: After adding a service, you can click on the price to customize it for your education program.
                   </p>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+
+              {/* Results Display */}
+              <div className="flex flex-col justify-center">
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8 text-center">
+                  <h3 className="text-lg font-semibold text-gray-600 mb-4">
+                    Monthly Revenue Impact
+                  </h3>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <div className="text-3xl font-bold text-red-600 mb-2">
+                        -${totalLoss.toLocaleString()}
+                      </div>
+                      <div className="text-sm text-gray-500">Lost to cancellations</div>
+                    </div>
+                    
+                    <div>
+                      <div className="text-4xl font-bold text-green-600 mb-2">
+                        +${totalRecovery.toLocaleString()}
+                      </div>
+                      <div className="text-sm text-gray-500">Potential recovery with ReslotAI</div>
+                    </div>
+                    
+                    <div className="pt-4 border-t">
+                      <div className="text-2xl font-bold text-gray-900 mb-2">
+                        ${(totalRecovery * 12).toLocaleString()}
+                      </div>
+                      <div className="text-sm text-gray-500">Annual recovery potential</div>
+                    </div>
+                  </div>
+                  
+                  <Button className="w-full mt-6 bg-gradient-cta text-white hover:opacity-90 font-semibold">
+                    Start Recovering Revenue
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
