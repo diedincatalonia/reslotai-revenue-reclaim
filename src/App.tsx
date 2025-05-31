@@ -17,6 +17,7 @@ import DentalServices from "./pages/DentalServices";
 import BeautyPersonalCare from "./pages/BeautyPersonalCare";
 import PetServices from "./pages/PetServices";
 import LegalServices from "./pages/LegalServices";
+import EducationConsulting from "./pages/EducationConsulting";
 
 const queryClient = new QueryClient();
 
