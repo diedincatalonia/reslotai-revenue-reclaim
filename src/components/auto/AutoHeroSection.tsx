@@ -65,16 +65,16 @@ const AutoHeroSection = () => {
                 </div>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
-                    <span className="text-sm text-gray-700">Oil Changes Recovered</span>
+                    <span className="text-sm text-gray-700">Appointments Recovered</span>
                     <span className="font-bold text-green-600">23 this month</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
-                    <span className="text-sm text-gray-700">Revenue Recovered</span>
-                    <span className="font-bold text-blue-600">$2,847</span>
+                    <span className="text-sm text-gray-700">Email Engagement Rate</span>
+                    <span className="font-bold text-blue-600">67%</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-purple-50 rounded-lg">
-                    <span className="text-sm text-gray-700">Success Rate</span>
-                    <span className="font-bold text-purple-600">42%</span>
+                    <span className="text-sm text-gray-700">Surveys Filled</span>
+                    <span className="font-bold text-purple-600">142 responses</span>
                   </div>
                 </div>
               </div>

@@ -9,21 +9,24 @@ const AutoTestimonials = () => {
       text: "We recovered $3,200/month in just 3 weeks!",
       author: "Tyson B.",
       title: "Auto Repair Owner",
-      business: "Elite Auto Repair"
+      business: "Elite Auto Repair",
+      image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=300&h=300&fit=crop&crop=face"
     },
     {
       rating: 5,
       text: "ReslotAI reduced our no-show rate by 42% — it's on autopilot now.",
       author: "Maria P.",
       title: "Service Dept Manager", 
-      business: "Downtown Honda"
+      business: "Downtown Honda",
+      image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=300&h=300&fit=crop&crop=face"
     },
     {
       rating: 5,
       text: "Setup took a day. It's rebooking missed oil changes like magic.",
       author: "Brandon R.",
       title: "Owner",
-      business: "Quick Fix Auto"
+      business: "Quick Fix Auto",
+      image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=300&h=300&fit=crop&crop=face"
     }
   ];
 
@@ -51,6 +54,14 @@ const AutoTestimonials = () => {
               key={index}
               className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-center hover:bg-white/15 transition-colors"
             >
+              <div className="flex justify-center mb-4">
+                <img 
+                  src={testimonial.image} 
+                  alt={testimonial.author}
+                  className="w-16 h-16 rounded-full object-cover border-2 border-white/20"
+                />
+              </div>
+              
               <div className="flex justify-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
