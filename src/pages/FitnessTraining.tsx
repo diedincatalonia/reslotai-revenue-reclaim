@@ -8,6 +8,7 @@ import FitnessCompetitionSection from '@/components/fitness/FitnessCompetitionSe
 import FitnessTestimonials from '@/components/fitness/FitnessTestimonials';
 import FitnessPricing from '@/components/fitness/FitnessPricing';
 import FitnessPDFDownload from '@/components/fitness/FitnessPDFDownload';
+import FitnessFinalCTA from '@/components/fitness/FitnessFinalCTA';
 import Footer from '@/components/Footer';
 
 const FitnessTraining = () => {
@@ -22,6 +23,7 @@ const FitnessTraining = () => {
         <FitnessTestimonials />
         <FitnessPricing />
         <FitnessPDFDownload />
+        <FitnessFinalCTA />
       </main>
       <Footer />
     </div>

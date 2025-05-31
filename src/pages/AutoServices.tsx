@@ -8,6 +8,7 @@ import AutoCompetitionSection from '@/components/auto/AutoCompetitionSection';
 import AutoTestimonials from '@/components/auto/AutoTestimonials';
 import AutoPricing from '@/components/auto/AutoPricing';
 import AutoPDFDownload from '@/components/auto/AutoPDFDownload';
+import AutoFinalCTA from '@/components/auto/AutoFinalCTA';
 import Footer from '@/components/Footer';
 
 const AutoServices = () => {
@@ -22,6 +23,7 @@ const AutoServices = () => {
         <AutoTestimonials />
         <AutoPricing />
         <AutoPDFDownload />
+        <AutoFinalCTA />
       </main>
       <Footer />
     </div>
