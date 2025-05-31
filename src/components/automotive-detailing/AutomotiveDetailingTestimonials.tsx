@@ -1,78 +1,98 @@
 
 import React from 'react';
-import { Star, Car } from 'lucide-react';
+import { Star } from 'lucide-react';
 
 const AutomotiveDetailingTestimonials = () => {
   const testimonials = [
     {
-      name: "Mike Rodriguez",
+      rating: 5,
+      text: "We recovered $12,800 in one month alone!",
+      author: "Mike Rodriguez",
+      title: "Owner",
       business: "Elite Auto Detailing",
-      image: "/placeholder.svg",
-      rating: 5,
-      quote: "ReslotAI helped us recover $4,200 in the first month alone. Our cancellation rate dropped by 68% and our shop stays busy.",
-      results: "+$4,200 recovered"
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face"
     },
     {
-      name: "Sarah Johnson", 
+      rating: 5,
+      text: "ReslotAI cut our no-show rate by 68% — customers love the flexible rebooking.",
+      author: "Sarah Johnson",
+      title: "Manager", 
       business: "Premium Car Care",
-      image: "/placeholder.svg",
-      rating: 5,
-      quote: "The AI messaging feels natural and professional. Customers appreciate the flexibility to reschedule easily.",
-      results: "68% cancellation recovery"
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=300&h=300&fit=crop&crop=face"
     },
     {
-      name: "David Chen",
-      business: "Mobile Detail Pro",
-      image: "/placeholder.svg", 
       rating: 5,
-      quote: "As a mobile detailer, cancelled appointments used to kill my schedule. Now ReslotAI fills those gaps automatically.",
-      results: "+25% revenue increase"
+      text: "Setup was incredibly easy. It's automatically rebooking cancelled ceramic coatings.",
+      author: "David Chen",
+      title: "Mobile Detailer",
+      business: "Mobile Detail Pro",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
     }
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gradient-hero">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <Car className="w-16 h-16 text-blue-600 mx-auto mb-4" />
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-inter">
-            Trusted by 300+ Automotive Professionals
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-inter">
+            What Automotive Professionals Say
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-inter">
-            See what detailing shop owners are saying about their revenue recovery
-          </p>
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="flex">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+              ))}
+            </div>
+            <span className="text-xl font-semibold text-white ml-2">4.8/5</span>
+          </div>
+          <p className="text-lg text-gray-200">Trusted by 300+ automotive detailing businesses</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="flex items-center mb-6">
+            <div
+              key={index}
+              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-center hover:bg-white/15 transition-colors"
+            >
+              <div className="flex justify-center mb-4">
                 <img 
                   src={testimonial.image} 
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full mr-4"
+                  alt={testimonial.author}
+                  className="w-16 h-16 rounded-full object-cover border-2 border-white/20"
                 />
-                <div>
-                  <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                  <p className="text-gray-600 text-sm">{testimonial.business}</p>
-                </div>
               </div>
               
-              <div className="flex mb-4">
+              <div className="flex justify-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
               
-              <blockquote className="text-gray-700 mb-6 italic">
-                "{testimonial.quote}"
+              <blockquote className="text-lg text-white mb-6 font-inter">
+                "{testimonial.text}"
               </blockquote>
               
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4">
-                <div className="text-lg font-bold text-green-600">{testimonial.results}</div>
+              <div className="text-gray-200">
+                <div className="font-semibold">— {testimonial.author}</div>
+                <div className="text-sm">{testimonial.title}</div>
+                <div className="text-sm text-gray-300">{testimonial.business}</div>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 max-w-md mx-auto">
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <span className="text-lg font-semibold text-white">4.8/5 Rating</span>
+            </div>
+            <p className="text-gray-200 text-sm">Based on 300+ verified reviews</p>
+          </div>
         </div>
       </div>
     </section>

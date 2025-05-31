@@ -7,7 +7,7 @@ import { Plus, Trash2, Edit } from 'lucide-react';
 const AutomotiveDetailingRevenueCalculator = () => {
   const [services, setServices] = useState([
     { name: 'Full Detail', price: 180, cancellations: 8 },
-    { name: 'Paint Correction', price: 350, cancellations: 5 }
+    { name: 'Paint Correction', price: 350, cancellations: 3 }
   ]);
 
   const presetServices = [
@@ -17,11 +17,7 @@ const AutomotiveDetailingRevenueCalculator = () => {
     { name: 'Interior Detail', price: 120 },
     { name: 'Exterior Wash & Wax', price: 85 },
     { name: 'Engine Bay Detail', price: 150 },
-    { name: 'Headlight Restoration', price: 95 },
-    { name: 'Wheel & Tire Detail', price: 65 },
-    { name: 'PPF Installation', price: 1200 },
-    { name: 'Steam Cleaning', price: 110 },
-    { name: 'Leather Treatment', price: 75 }
+    { name: 'Headlight Restoration', price: 95 }
   ];
 
   const addService = (serviceName: string, price: number) => {
@@ -55,10 +51,10 @@ const AutomotiveDetailingRevenueCalculator = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-inter">
-              Calculate Your Automotive Revenue Recovery
+              Calculate Your Detailing Revenue Recovery
             </h2>
             <p className="text-xl text-gray-200 font-inter">
-              See how much revenue you could recover from cancelled detailing appointments
+              See how much revenue you could recover from automotive detailing cancellations
             </p>
           </div>
 
@@ -67,7 +63,7 @@ const AutomotiveDetailingRevenueCalculator = () => {
               {/* Calculator Form */}
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Your Automotive Services</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Your Services</h3>
                   <p className="text-gray-600 text-sm mb-6">
                     <Edit className="w-4 h-4 inline mr-1" />
                     Click on any price or service name to edit it. Add your most common services and their typical cancellation rates.
