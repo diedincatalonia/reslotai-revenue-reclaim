@@ -24,13 +24,13 @@ const DentalHowItWorks = () => {
       example: {
         type: "sms",
         conversation: [
-          { sender: "practice", message: "Hi David! We saw you cancelled your root canal appointment for tomorrow. We completely understand - is there anything we can help with to make you more comfortable?" },
-          { sender: "patient", message: "I'm honestly pretty anxious about the procedure" },
-          { sender: "practice", message: "That's completely normal! Dr. Rodriguez specializes in anxiety-free dentistry. We offer nitrous oxide and have patients watch Netflix during treatment. Would you like to speak with him about your concerns?" },
-          { sender: "patient", message: "That actually sounds much better" },
-          { sender: "practice", message: "Great! He has 15 minutes at 11 AM today for a quick consultation call. Also, we just had a cancellation for Thursday at 2 PM if you'd prefer to get it done this week. The longer we wait, the more discomfort you might experience." },
-          { sender: "patient", message: "Ok let's do Thursday at 2pm. Can I get the nitrous?" },
-          { sender: "practice", message: "Absolutely! You're all set for Thursday at 2 PM with nitrous oxide. We'll also send you our pre-procedure relaxation guide. You've got this! 💪" }
+          { sender: "practice", message: "Hello David, this is Smile Care Dental. We noticed you needed to cancel your root canal appointment scheduled for tomorrow at 2 PM. We understand these things happen. Would you like to reschedule?" },
+          { sender: "patient", message: "Yes, but I'm quite nervous about the procedure. Can we discuss options?" },
+          { sender: "practice", message: "Of course! Dr. Rodriguez offers several comfort options including nitrous oxide and IV sedation. We also provide noise-canceling headphones and can explain each step. Would a brief consultation call help ease your concerns?" },
+          { sender: "patient", message: "That would be great, thank you." },
+          { sender: "practice", message: "Perfect. Dr. Rodriguez can call you at 11 AM today to discuss your options. We also have an opening this Thursday at 2 PM if you'd like to proceed sooner. Early treatment often means less discomfort." },
+          { sender: "patient", message: "Thursday at 2 PM works. Please book me with the nitrous oxide option." },
+          { sender: "practice", message: "Excellent! You're scheduled for Thursday, March 14th at 2 PM with Dr. Rodriguez, including nitrous oxide. We'll send you pre-appointment instructions shortly. Thank you for choosing Smile Care Dental." }
         ]
       }
     },

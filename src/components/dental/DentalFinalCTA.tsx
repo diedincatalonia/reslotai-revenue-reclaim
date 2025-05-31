@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, Calendar, Calculator } from 'lucide-react';
+import { CheckCircle, Calendar, Calculator, Tag } from 'lucide-react';
 
 const DentalFinalCTA = () => {
   return (
@@ -14,6 +14,14 @@ const DentalFinalCTA = () => {
           <p className="text-xl lg:text-2xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Join 500+ dental practices already recovering thousands in lost revenue every month
           </p>
+
+          {/* Promotional Code Banner */}
+          <div className="bg-white/20 backdrop-blur-sm rounded-lg p-4 mb-8 border border-white/30">
+            <div className="flex items-center justify-center gap-3">
+              <Tag className="w-6 h-6 text-yellow-300" />
+              <span className="text-lg font-semibold">Limited Time: Use code <span className="bg-yellow-300 text-blue-900 px-2 py-1 rounded font-bold">SMILE</span> for 10% off your first month!</span>
+            </div>
+          </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">

@@ -8,6 +8,7 @@ import DentalCompetitionSection from '@/components/dental/DentalCompetitionSecti
 import DentalTestimonials from '@/components/dental/DentalTestimonials';
 import DentalPricing from '@/components/dental/DentalPricing';
 import DentalPDFDownload from '@/components/dental/DentalPDFDownload';
+import DentalFinalCTA from '@/components/dental/DentalFinalCTA';
 import Footer from '@/components/Footer';
 
 const DentalServices = () => {
@@ -22,6 +23,7 @@ const DentalServices = () => {
         <DentalTestimonials />
         <DentalPricing />
         <DentalPDFDownload />
+        <DentalFinalCTA />
       </main>
       <Footer />
     </div>
