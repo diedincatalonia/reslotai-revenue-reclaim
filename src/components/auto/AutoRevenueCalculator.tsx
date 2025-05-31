@@ -62,7 +62,13 @@ const AutoRevenueCalculator = () => {
             <div className="grid lg:grid-cols-2 gap-8">
               {/* Calculator Form */}
               <div className="space-y-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Your Services</h3>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Your Services</h3>
+                  <p className="text-gray-600 text-sm mb-6">
+                    <Edit className="w-4 h-4 inline mr-1" />
+                    Click on any price or service name to edit it. Add your most common services and their typical cancellation rates.
+                  </p>
+                </div>
                 
                 {/* Current Services */}
                 <div className="space-y-4">
@@ -126,6 +132,9 @@ const AutoRevenueCalculator = () => {
                       </Button>
                     ))}
                   </div>
+                  <p className="text-xs text-gray-500 mt-2">
+                    💡 Tip: After adding a service, you can click on the price to customize it for your shop.
+                  </p>
                 </div>
               </div>
 
