@@ -13,8 +13,8 @@ const DentalHowItWorks = () => {
       description: "Automated emails and SMS for cancelled appointments",
       example: {
         type: "email",
-        subject: "Don't Skip Your Cleaning - Your Smile Depends On It!",
-        content: "Hi Sarah,\n\nWe noticed you had to cancel your cleaning appointment. Did you know that skipping regular cleanings can lead to gum disease and cavities?\n\nRegular cleanings every 6 months help:\n• Prevent costly dental problems\n• Maintain healthy gums\n• Keep your smile bright\n\nWe have these times available:\n• Tomorrow at 2:00 PM\n• Friday at 10:00 AM\n• Next Monday at 3:30 PM\n\nClick here to reschedule: [Book Now]\n\nDr. Smith & Team"
+        subject: "Your Dental Health Matters - Let's Reschedule Your Appointment",
+        content: "Dear Jennifer,\n\nWe understand that unexpected things come up, and we noticed you had to cancel your dental cleaning appointment scheduled for today.\n\nRegular dental cleanings are crucial for:\n• Preventing gum disease and tooth decay\n• Early detection of potential issues\n• Maintaining optimal oral health\n• Avoiding costly emergency treatments\n\nWe have these convenient appointment times available:\n• Tomorrow (Thursday) at 2:30 PM\n• Friday at 10:15 AM\n• Monday at 1:45 PM\n\nTo reschedule, simply reply to this email or call us at (555) 123-4567.\n\nYour oral health is our priority, and we're here to work with your schedule.\n\nBest regards,\nDr. Sarah Mitchell & The Smile Care Team\n\nP.S. Remember, patients who maintain regular 6-month cleanings save an average of $2,400 annually on dental treatments."
       }
     },
     {
@@ -24,12 +24,13 @@ const DentalHowItWorks = () => {
       example: {
         type: "sms",
         conversation: [
-          { sender: "practice", message: "Hi Mike! We saw you cancelled your root canal appointment. We understand dental anxiety - would a different time work better?" },
-          { sender: "patient", message: "Yeah I'm really nervous about it" },
-          { sender: "practice", message: "Totally understand! Dr. Johnson specializes in comfortable procedures. We also offer sedation options. Would you like to discuss this over a quick call?" },
-          { sender: "patient", message: "That would help actually" },
-          { sender: "practice", message: "Perfect! I'll have Dr. Johnson call you in 10 minutes. Also, we have a cancellation tomorrow at 1 PM if you'd prefer to get it done sooner. Sound good?" },
-          { sender: "patient", message: "Yes please book me for tomorrow 1pm" }
+          { sender: "practice", message: "Hi David! We saw you cancelled your root canal appointment for tomorrow. We completely understand - is there anything we can help with to make you more comfortable?" },
+          { sender: "patient", message: "I'm honestly pretty anxious about the procedure" },
+          { sender: "practice", message: "That's completely normal! Dr. Rodriguez specializes in anxiety-free dentistry. We offer nitrous oxide and have patients watch Netflix during treatment. Would you like to speak with him about your concerns?" },
+          { sender: "patient", message: "That actually sounds much better" },
+          { sender: "practice", message: "Great! He has 15 minutes at 11 AM today for a quick consultation call. Also, we just had a cancellation for Thursday at 2 PM if you'd prefer to get it done this week. The longer we wait, the more discomfort you might experience." },
+          { sender: "patient", message: "Ok let's do Thursday at 2pm. Can I get the nitrous?" },
+          { sender: "practice", message: "Absolutely! You're all set for Thursday at 2 PM with nitrous oxide. We'll also send you our pre-procedure relaxation guide. You've got this! 💪" }
         ]
       }
     },
@@ -40,11 +41,12 @@ const DentalHowItWorks = () => {
       example: {
         type: "insights",
         data: [
-          { metric: "Most common cancellation reason", value: "Schedule conflicts (34%)" },
-          { metric: "Best response time", value: "Within 2 hours (73% rebook rate)" },
-          { metric: "High-risk patients", value: "3 patients likely to cancel this week" },
-          { metric: "Optimal follow-up", value: "2 SMS + 1 email sequence" },
-          { metric: "Revenue recovery", value: "$4,200 this month" }
+          { metric: "Primary cancellation reason", value: "Work schedule conflicts (28%)" },
+          { metric: "Optimal contact time", value: "Within 3 hours (81% response rate)" },
+          { metric: "High-risk cancellation patients", value: "5 patients flagged for this week" },
+          { metric: "Most effective follow-up", value: "Personal SMS + educational email" },
+          { metric: "Revenue recovered this month", value: "$12,850 from 23 rescheduled appointments" },
+          { metric: "Average time to reschedule", value: "4.2 hours after cancellation" }
         ]
       }
     }
