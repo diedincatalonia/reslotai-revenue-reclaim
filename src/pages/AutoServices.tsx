@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import AutoHeroSection from '@/components/auto/AutoHeroSection';
 import AutoHowItWorks from '@/components/auto/AutoHowItWorks';
 import AutoRevenueCalculator from '@/components/auto/AutoRevenueCalculator';
+import AutoRoleSpecificSection from '@/components/auto/AutoRoleSpecificSection';
 import AutoCompetitionSection from '@/components/auto/AutoCompetitionSection';
 import AutoTestimonials from '@/components/auto/AutoTestimonials';
 import AutoPricing from '@/components/auto/AutoPricing';
@@ -18,6 +19,7 @@ const AutoServices = () => {
         <AutoHeroSection />
         <AutoHowItWorks />
         <AutoRevenueCalculator />
+        <AutoRoleSpecificSection />
         <AutoCompetitionSection />
         <AutoTestimonials />
         <AutoPricing />
