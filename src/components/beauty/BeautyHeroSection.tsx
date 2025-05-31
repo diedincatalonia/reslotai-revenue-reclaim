@@ -16,14 +16,14 @@ const BeautyHeroSection = () => {
           {/* Left Content */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-6xl font-inter font-bold text-white mb-6 animate-fade-in">
-              Stop Losing Revenue from{' '}
+              Stop Losing Clients to{' '}
               <span className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
                 No-Shows
               </span>
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-200 mb-8 animate-slide-up font-inter">
-              Automatically recover lost revenue when beauty appointments get cancelled. Built for salons, barbershops, and nail studios.
+              ReslotAI automatically reschedules cancelled beauty appointments and fills your chair time with zero extra work.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12 animate-slide-up">
@@ -38,7 +38,7 @@ const BeautyHeroSection = () => {
                 variant="outline" 
                 className="border-white text-white hover:bg-white hover:text-blue-900 font-semibold px-8 py-4 text-lg transition-all transform hover:scale-105"
               >
-                See How It Works
+                See Pricing
               </Button>
             </div>
 
@@ -61,7 +61,7 @@ const BeautyHeroSection = () => {
               <div className="bg-white rounded-xl p-6 shadow-xl">
                 <div className="border-b pb-3 mb-4">
                   <h3 className="font-semibold text-gray-800">ReslotAI Dashboard</h3>
-                  <p className="text-sm text-gray-600">Real-time beauty recovery tracking</p>
+                  <p className="text-sm text-gray-600">Real-time appointment recovery</p>
                 </div>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg">
@@ -69,12 +69,12 @@ const BeautyHeroSection = () => {
                     <span className="font-bold text-green-600">47 this month</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
-                    <span className="text-sm text-gray-700">Revenue Recovered</span>
-                    <span className="font-bold text-blue-600">$8,250</span>
+                    <span className="text-sm text-gray-700">Client Response Rate</span>
+                    <span className="font-bold text-blue-600">81%</span>
                   </div>
                   <div className="flex justify-between items-center p-3 bg-purple-50 rounded-lg">
-                    <span className="text-sm text-gray-700">Client Satisfaction</span>
-                    <span className="font-bold text-purple-600">4.8/5</span>
+                    <span className="text-sm text-gray-700">Chair Time Utilization</span>
+                    <span className="font-bold text-purple-600">94%</span>
                   </div>
                 </div>
               </div>
