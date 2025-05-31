@@ -7,17 +7,17 @@ const BeautyHowItWorks = () => {
     {
       icon: <Calendar className="w-12 h-12 text-blue-600" />,
       title: "Client Cancels",
-      description: "When a client cancels their appointment, ReslotAI automatically detects it"
+      description: "When a beauty appointment is cancelled, ReslotAI automatically detects it and starts the recovery process"
     },
     {
       icon: <MessageSquare className="w-12 h-12 text-purple-600" />,
       title: "Smart Recovery",
-      description: "Sends personalized messages to recover the appointment and collect feedback"
+      description: "Sends personalized messages to recover the appointment and collect feedback from your beauty clients"
     },
     {
       icon: <TrendingUp className="w-12 h-12 text-green-600" />,
       title: "Revenue Recovered",
-      description: "Clients rebook, and you recover lost revenue without any manual work"
+      description: "Beauty clients rebook their appointments, and you recover lost revenue without any manual work"
     }
   ];
 
@@ -26,10 +26,10 @@ const BeautyHowItWorks = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-inter">
-            How It Works for Beauty Professionals
+            How ReslotAI Works for Beauty Professionals
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto font-inter">
-            Three simple steps to automatically recover lost appointments and keep your chair time full
+            Three simple steps to automatically recover lost appointments and keep your salon booked
           </p>
         </div>
 

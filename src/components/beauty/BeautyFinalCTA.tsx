@@ -55,7 +55,7 @@ const BeautyFinalCTA = () => {
           </div>
 
           <div className="text-blue-200 text-sm">
-            ✓ No setup fees ✓ No contracts required ✓ Beauty industry compliant ✓ 24/7 support
+            ✓ No contracts required ✓ No setup fees ✓ Beauty industry compliant ✓ 24/7 support
           </div>
         </div>
       </div>

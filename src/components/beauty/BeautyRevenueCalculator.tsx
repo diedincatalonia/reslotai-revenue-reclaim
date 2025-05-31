@@ -36,13 +36,13 @@ const BeautyRevenueCalculator = () => {
               Calculate Your Beauty Business Revenue Recovery
             </h2>
             <p className="text-xl text-gray-600 font-inter">
-              See how much revenue you could recover from cancelled appointments
+              See how much revenue you could recover from cancelled beauty appointments
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="bg-white rounded-2xl p-8 shadow-xl">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Enter Your Numbers</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Enter Your Salon Numbers</h3>
               
               <div className="space-y-6">
                 <div>
