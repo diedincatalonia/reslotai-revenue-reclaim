@@ -8,7 +8,7 @@ const AutoTestimonials = () => {
       rating: 5,
       text: "We recovered $3,200/month in just 3 weeks!",
       author: "Tyson B.",
-      title: "Auto Repair Owner",
+      title: "Service Manager",
       business: "Elite Auto Repair",
       image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=300&h=300&fit=crop&crop=face"
     },
@@ -16,7 +16,7 @@ const AutoTestimonials = () => {
       rating: 5,
       text: "ReslotAI reduced our no-show rate by 42% — it's on autopilot now.",
       author: "Maria P.",
-      title: "Service Dept Manager", 
+      title: "BDC Director", 
       business: "Downtown Honda",
       image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=300&h=300&fit=crop&crop=face"
     },
@@ -24,7 +24,7 @@ const AutoTestimonials = () => {
       rating: 5,
       text: "Setup took a day. It's rebooking missed oil changes like magic.",
       author: "Brandon R.",
-      title: "Owner",
+      title: "General Manager",
       business: "Quick Fix Auto",
       image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=300&h=300&fit=crop&crop=face"
     }
