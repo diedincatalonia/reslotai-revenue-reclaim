@@ -27,13 +27,13 @@ const EducationTestimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-purple-50">
+    <section className="py-20 bg-gradient-hero">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-inter">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-inter">
             What Education Providers Say About ReslotAI
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-inter">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto font-inter">
             Real results from real education businesses
           </p>
         </div>
@@ -42,7 +42,7 @@ const EducationTestimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
             >
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -50,7 +50,7 @@ const EducationTestimonials = () => {
                 ))}
               </div>
               
-              <p className="text-gray-700 mb-6 font-inter leading-relaxed">
+              <p className="text-gray-200 mb-6 font-inter leading-relaxed">
                 "{testimonial.content}"
               </p>
               
@@ -59,10 +59,10 @@ const EducationTestimonials = () => {
                   {testimonial.avatar}
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 font-inter">
+                  <h4 className="font-semibold text-white font-inter">
                     {testimonial.name}
                   </h4>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-gray-300 text-sm">
                     {testimonial.role}
                   </p>
                 </div>
@@ -72,8 +72,8 @@ const EducationTestimonials = () => {
         </div>
 
         <div className="text-center mt-12">
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 max-w-2xl mx-auto">
-            <p className="text-blue-900 font-inter">
+          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-6 max-w-2xl mx-auto">
+            <p className="text-white font-inter">
               <strong>Join 150+ education providers</strong> who've recovered over $76k in lost revenue
             </p>
           </div>
