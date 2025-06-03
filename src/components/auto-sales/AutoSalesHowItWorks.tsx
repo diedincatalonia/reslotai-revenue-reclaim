@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Calendar, MessageSquare, BarChart3, X } from 'lucide-react';
+import { Mail, MessageSquare, BarChart3, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const AutoSalesHowItWorks = () => {
@@ -8,33 +8,36 @@ const AutoSalesHowItWorks = () => {
 
   const steps = [
     {
-      icon: <Calendar className="w-12 h-12 text-blue-600" />,
-      title: "Customer Cancels Sales Appointment",
-      description: "Automated detection and tagging of cancelled car sales appointments",
+      icon: <Mail className="w-12 h-12 text-blue-600" />,
+      title: "Automated Emails",
+      description: "Send follow-ups with exclusive offers",
+      detail: "Personalized recovery emails with vehicle-specific discounts to bring customers back.",
       example: {
-        type: "scenario",
-        title: "Real Example: Last-Minute Test Drive Cancellation",
-        content: "Sarah Williams calls at 1:45 PM to cancel her 2:00 PM appointment to test drive a 2023 Honda Accord. She mentions 'something came up' but doesn't provide details. Our system immediately detects this cancellation and tags it as 'last-minute' with 'vague reason' - prime indicators for successful recovery."
+        type: "email",
+        title: "Automated Recovery Email Example",
+        content: "Subject: Still interested in that 2023 Honda Accord, Sarah?\n\nHi Sarah,\n\nWe noticed you had to cancel your test drive appointment yesterday. No worries - life happens!\n\nGood news: Your 2023 Honda Accord LX is still available, and we're offering an exclusive $500 loyalty discount just for you.\n\n🚗 2023 Honda Accord LX - Silver\n💰 MSRP: $28,400 → Your Price: $27,900\n⏰ Limited time offer expires in 48 hours\n\n📅 Book your test drive:\n• Today 4:00 PM - 6:00 PM\n• Tomorrow 10:00 AM - 7:00 PM\n• Weekend slots available\n\n[SCHEDULE TEST DRIVE] [VIEW VEHICLE DETAILS]\n\nQuestions? Reply to this email or call Mike directly at (555) 123-4567.\n\nBest regards,\nMike Johnson\nHonda Downtown Sales"
       }
     },
     {
       icon: <MessageSquare className="w-12 h-12 text-purple-600" />,
-      title: "Smart Follow-up & Survey",
-      description: "Personalized messages asking why they cancelled with easy rescheduling",
+      title: "Smart SMS Recovery",
+      description: "Remind and reschedule via text automatically",
+      detail: "Intelligent text messaging that responds to customer needs and reschedules instantly.",
       example: {
-        type: "message",
-        title: "Automated Recovery Message",
-        content: "Text sent 30 minutes later:\n\n'Hi Sarah! We understand things come up. Was it a timing issue or do you need more info about the Accord? We have these times available: Tomorrow 3 PM, Sunday 11 AM, or Monday 6 PM. Click here to book instantly: [link]. Still interested? Reply STOP to opt out. - Mike at Honda Downtown'"
+        type: "sms",
+        title: "Smart SMS Recovery Conversation",
+        content: "Honda Downtown (2:15 PM):\nHi Sarah! We understand you had to cancel your test drive. Still interested in the 2023 Accord? We have these times open: Today 4PM, Tomorrow 11AM, Saturday 2PM. Reply with your preferred time!\n\nSarah (2:23 PM):\nSaturday 2pm works\n\nHonda Downtown (2:24 PM):\nPerfect! You're confirmed for Saturday 2:00 PM test drive - 2023 Honda Accord LX. Address: 123 Auto Blvd. Ask for Mike. We'll have the keys ready! 🚗\n\nSarah (2:25 PM):\nGreat thanks!\n\nHonda Downtown (Saturday 1:45 PM):\nSee you in 15 minutes Sarah! Your Accord is ready for the test drive. Mike will meet you at the front desk."
       }
     },
     {
       icon: <BarChart3 className="w-12 h-12 text-green-600" />,
-      title: "Track Recovery Success",
-      description: "Monitor which customers return and see recovered revenue in real-time",
+      title: "AI-Driven Insights",
+      description: "Learn why customers cancel and when they rebook",
+      detail: "Track patterns and optimize your service offerings based on real customer behavior.",
       example: {
-        type: "success",
-        title: "Successful Recovery & Sale",
-        content: "Sarah clicks the Sunday 11 AM slot and confirms. She arrives on time, test drives the Accord, and purchases it for $28,400 with financing.\n\nResults:\n• Total gross profit: $3,200\n• Commission earned: $640\n• Recovery time: 2 days\n\nThis sale would have been completely lost without ReslotAI intervention."
+        type: "insights",
+        title: "AI-Driven Customer Insights Dashboard",
+        content: "🔍 CUSTOMER BEHAVIOR INSIGHTS\n\nTop Cancellation Reasons:\n• 'Schedule conflict' - 34% (recoverable)\n• 'Still shopping around' - 28% (high-value targets)\n• 'Need to think about it' - 22% (finance hesitation)\n• 'Family discussion needed' - 16% (decision makers)\n\n📊 Recovery Success Patterns:\n• Same-day follow-up: 73% response rate\n• Weekend rescheduling: 68% show rate\n• Discount offers: +45% conversion\n• Text vs Email: 3.2x faster response\n\n💡 AI Recommendations:\n• Target 'shopping around' customers with competitive pricing alerts\n• Offer financing pre-approval for 'thinking about it' responses\n• Schedule family-friendly appointment times for multi-decision households\n\n🎯 This Month's Impact:\n• 47 cancelled appointments recovered\n• $186,000 in saved revenue\n• 23% improvement in sales efficiency"
       }
     }
   ];
@@ -66,8 +69,11 @@ const AutoSalesHowItWorks = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-4 font-inter">
                 {step.title}
               </h3>
-              <p className="text-lg text-gray-600 mb-4 font-inter">
+              <p className="text-lg text-gray-600 mb-4 font-inter font-semibold">
                 {step.description}
+              </p>
+              <p className="text-sm text-gray-500 mb-6">
+                {step.detail}
               </p>
               <Button variant="outline" className="text-blue-600 border-blue-600 hover:bg-blue-50">
                 See Example
