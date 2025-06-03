@@ -12,6 +12,7 @@ import Success from "./pages/Success";
 import NotFound from "./pages/NotFound";
 import LandingPageMockup from "./pages/LandingPageMockup";
 import AutoServices from "./pages/AutoServices";
+import AutoSales from "./pages/AutoSales";
 import FitnessTraining from "./pages/FitnessTraining";
 import DentalServices from "./pages/DentalServices";
 import BeautyPersonalCare from "./pages/BeautyPersonalCare";
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/success" element={<Success />} />
           <Route path="/landing-page-mockup" element={<LandingPageMockup />} />
           <Route path="/auto-services" element={<AutoServices />} />
+          <Route path="/auto-sales" element={<AutoSales />} />
           <Route path="/fitness-training" element={<FitnessTraining />} />
           <Route path="/dental-services" element={<DentalServices />} />
           <Route path="/beauty-personal-care" element={<BeautyPersonalCare />} />
