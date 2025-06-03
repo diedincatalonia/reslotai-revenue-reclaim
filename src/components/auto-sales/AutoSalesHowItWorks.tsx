@@ -7,17 +7,20 @@ const AutoSalesHowItWorks = () => {
     {
       icon: <Calendar className="w-12 h-12 text-blue-600" />,
       title: "Customer Cancels Sales Appointment",
-      description: "When a potential car buyer cancels their appointment, ReslotAI automatically triggers our recovery sequence."
+      description: "When a potential car buyer cancels their appointment, ReslotAI automatically triggers our recovery sequence.",
+      example: "Example: Sarah cancels her 2 PM Saturday appointment to test drive a Honda Accord. Our system immediately detects this and starts the recovery process."
     },
     {
       icon: <MessageSquare className="w-12 h-12 text-purple-600" />,
       title: "Smart Follow-up & Survey",
-      description: "We send personalized messages asking why they cancelled and offer easy rescheduling options with one-click booking."
+      description: "We send personalized messages asking why they cancelled and offer easy rescheduling options with one-click booking.",
+      example: "Example: 'Hi Sarah, we noticed you had to reschedule. Was it a timing issue? We have openings tomorrow at 3 PM or Sunday at 11 AM. Click here to book instantly.'"
     },
     {
       icon: <BarChart3 className="w-12 h-12 text-green-600" />,
       title: "Track Recovery Success",
-      description: "Monitor which customers return, identify sales patterns, and see your recovered revenue in real-time."
+      description: "Monitor which customers return, identify sales patterns, and see your recovered revenue in real-time.",
+      example: "Example: Dashboard shows Sarah rescheduled for Sunday, arrived on time, and purchased the Accord for $28,000 - a recovered sale that would have been lost."
     }
   ];
 
@@ -45,9 +48,14 @@ const AutoSalesHowItWorks = () => {
               <h3 className="text-2xl font-bold text-gray-900 mb-4 font-inter">
                 {step.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed font-inter">
+              <p className="text-gray-600 leading-relaxed font-inter mb-4">
                 {step.description}
               </p>
+              <div className="bg-gray-50 rounded-lg p-4 text-left">
+                <p className="text-sm text-gray-700 italic">
+                  {step.example}
+                </p>
+              </div>
             </div>
           ))}
         </div>
