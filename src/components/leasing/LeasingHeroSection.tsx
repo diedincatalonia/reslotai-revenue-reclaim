@@ -16,9 +16,9 @@ const LeasingHeroSection = () => {
           {/* Left Content */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-6xl font-inter font-bold text-white mb-6 animate-fade-in">
-              Stop Losing Leases to{' '}
+              Leasing software that helps you{' '}
               <span className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
-                No-Shows
+                recover missed tours automatically
               </span>
             </h1>
 
