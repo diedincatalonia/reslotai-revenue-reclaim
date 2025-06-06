@@ -5,7 +5,7 @@ const LeasingHowItWorks = () => {
   const [activeExample, setActiveExample] = useState<number | null>(null);
   const steps = [{
     icon: <Mail className="w-12 h-12 text-blue-600" />,
-    title: "Automated Emails",
+    title: "Targeted Email Offers",
     description: "Send follow-ups with exclusive offers",
     detail: "Personalized recovery emails with apartment-specific incentives to bring prospects back.",
     example: {
