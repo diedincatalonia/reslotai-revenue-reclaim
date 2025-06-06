@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { X, Check, ArrowDown } from 'lucide-react';
 
@@ -25,7 +24,7 @@ const LeasingCompetitionSection = () => {
             How we recover more missed tours than manual follow-ups ever could.
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Follow the customer journey and see how ReslotAI transforms missed opportunities into signed leases
+            Follow the customer journey below and see how our software transforms missed opportunities into signed leases.
           </p>
         </div>
 
