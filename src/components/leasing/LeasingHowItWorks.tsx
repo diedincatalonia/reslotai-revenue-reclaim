@@ -15,7 +15,7 @@ const LeasingHowItWorks = () => {
     }
   }, {
     icon: <MessageSquare className="w-12 h-12 text-purple-600" />,
-    title: "Smart SMS Recovery",
+    title: "Instant SMS Outreach",
     description: "Remind and reschedule via text automatically",
     detail: "Intelligent text messaging that responds to prospect needs and reschedules instantly.",
     example: {
