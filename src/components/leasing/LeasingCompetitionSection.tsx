@@ -1,20 +1,20 @@
 
 import React from 'react';
-import { X, Check } from 'lucide-react';
+import { X, Check, ArrowDown } from 'lucide-react';
 
 const LeasingCompetitionSection = () => {
-  const withoutItems = [
-    "Missed tours go unanswered",
-    "Leasing agents follow up manually", 
-    "Lost rent adds up quietly",
-    "No insight into renter behavior"
+  const withoutJourney = [
+    { step: 1, title: "Tour Scheduled", description: "Prospect books apartment tour" },
+    { step: 2, title: "No-Show Occurs", description: "Prospect doesn't show up for scheduled tour" },
+    { step: 3, title: "Manual Follow-up", description: "Leasing agent manually calls or emails (if they remember)" },
+    { step: 4, title: "Lost Opportunity", description: "Prospect moves on to competitor, revenue lost" }
   ];
 
-  const withItems = [
-    "Automated SMS and email based on renter intent",
-    "No-shows re-engage without effort",
-    "Calendar fills with recovered appointments", 
-    "AI insights improve future rebooking strategy"
+  const withJourney = [
+    { step: 1, title: "Tour Scheduled", description: "Prospect books apartment tour" },
+    { step: 2, title: "No-Show Detected", description: "ReslotAI automatically detects the missed appointment" },
+    { step: 3, title: "Smart Re-engagement", description: "Automated SMS/email sent based on prospect's intent level" },
+    { step: 4, title: "Tour Rescheduled", description: "Prospect re-books and completes tour, lease signed" }
   ];
 
   return (
@@ -24,74 +24,102 @@ const LeasingCompetitionSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-inter">
             What Missed Tour Recovery Looks Like With and Without ReslotAI
           </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Follow the customer journey and see how ReslotAI transforms missed opportunities into signed leases
+          </p>
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Without ReslotAI - Funnel shape */}
-            <div className="relative">
-              <div className="bg-white rounded-t-2xl p-8 border-2 border-red-200 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-400 to-red-500"></div>
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <X className="w-8 h-8 text-red-600" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 font-inter">
-                    Without ReslotAI
-                  </h3>
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Without ReslotAI Journey */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-red-100">
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <X className="w-8 h-8 text-red-600" />
                 </div>
-                
-                <div className="space-y-4">
-                  {withoutItems.map((item, index) => (
-                    <div key={index} className="flex items-start gap-3 p-3 bg-red-50 rounded-lg border border-red-100">
-                      <div className="w-2 h-2 bg-red-400 rounded-full mt-3 flex-shrink-0"></div>
-                      <p className="text-gray-700 font-inter leading-relaxed">
-                        {item}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                <h3 className="text-2xl font-bold text-gray-900 font-inter">
+                  Without ReslotAI
+                </h3>
+                <p className="text-red-600 font-semibold mt-2">Lost Revenue Path</p>
               </div>
               
-              {/* Funnel bottom for "Without" */}
-              <div className="bg-red-100 h-8 relative">
-                <div 
-                  className="absolute top-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[50px] border-r-[50px] border-t-[32px] border-l-transparent border-r-transparent border-t-red-200"
-                ></div>
+              <div className="space-y-6">
+                {withoutJourney.map((item, index) => (
+                  <div key={index}>
+                    <div className="flex items-start gap-4">
+                      <div className="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                        {item.step}
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-gray-900 mb-1">{item.title}</h4>
+                        <p className="text-gray-600 text-sm">{item.description}</p>
+                      </div>
+                    </div>
+                    {index < withoutJourney.length - 1 && (
+                      <div className="flex justify-start ml-4 mt-3">
+                        <ArrowDown className="w-4 h-4 text-red-400" />
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+              
+              <div className="mt-8 p-4 bg-red-50 rounded-lg border border-red-200">
+                <p className="text-red-700 font-semibold text-center">
+                  Result: $2,000+ lost revenue per missed tour
+                </p>
               </div>
             </div>
 
-            {/* With ReslotAI - Inverted funnel shape */}
-            <div className="relative">
-              {/* Inverted funnel top for "With" */}
-              <div className="bg-green-100 h-8 relative">
-                <div 
-                  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[50px] border-r-[50px] border-b-[32px] border-l-transparent border-r-transparent border-b-green-200"
-                ></div>
+            {/* With ReslotAI Journey */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-green-100">
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Check className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 font-inter">
+                  With ReslotAI
+                </h3>
+                <p className="text-green-600 font-semibold mt-2">Revenue Recovery Path</p>
               </div>
               
-              <div className="bg-white rounded-b-2xl p-8 border-2 border-green-200 relative overflow-hidden">
-                <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 to-green-500"></div>
-                <div className="text-center mb-8">
-                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Check className="w-8 h-8 text-green-600" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 font-inter">
-                    With ReslotAI
-                  </h3>
-                </div>
-                
-                <div className="space-y-4">
-                  {withItems.map((item, index) => (
-                    <div key={index} className="flex items-start gap-3 p-3 bg-green-50 rounded-lg border border-green-100">
-                      <div className="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
-                      <p className="text-gray-700 font-inter leading-relaxed">
-                        {item}
-                      </p>
+              <div className="space-y-6">
+                {withJourney.map((item, index) => (
+                  <div key={index}>
+                    <div className="flex items-start gap-4">
+                      <div className="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                        {item.step}
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-gray-900 mb-1">{item.title}</h4>
+                        <p className="text-gray-600 text-sm">{item.description}</p>
+                      </div>
                     </div>
-                  ))}
-                </div>
+                    {index < withJourney.length - 1 && (
+                      <div className="flex justify-start ml-4 mt-3">
+                        <ArrowDown className="w-4 h-4 text-green-400" />
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
+              
+              <div className="mt-8 p-4 bg-green-50 rounded-lg border border-green-200">
+                <p className="text-green-700 font-semibold text-center">
+                  Result: 79% of missed tours recovered automatically
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Summary */}
+          <div className="mt-12 text-center">
+            <div className="bg-white rounded-xl p-6 shadow-lg max-w-2xl mx-auto">
+              <h4 className="text-xl font-bold text-gray-900 mb-2">The Difference</h4>
+              <p className="text-gray-600">
+                ReslotAI turns your biggest leasing challenge into your competitive advantage, 
+                automatically recovering revenue that would otherwise walk out the door.
+              </p>
             </div>
           </div>
         </div>
