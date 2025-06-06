@@ -32,7 +32,7 @@ const LeasingRevenueCalculator = () => {
               Estimate recovered revenue with ReslotAI and your property management software
             </h2>
             <p className="text-xl text-gray-600 font-inter">
-              See how much revenue you could recover from missed apartment tours
+              Whether you manage 1 or 1,000 units, ReslotAI works with your existing tools- no switching needed. Missed tours mean lost revenue. Use the calculator below to see how much you could recover.
             </p>
           </div>
 
