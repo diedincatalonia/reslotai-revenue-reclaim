@@ -7,7 +7,7 @@ const LeasingHowItWorks = () => {
     icon: <Mail className="w-12 h-12 text-blue-600" />,
     title: "Targeted Email Offers",
     description: "Send follow-ups with exclusive offers",
-    detail: "Personalized recovery emails with apartment-specific incentives to bring prospects back.",
+    detail: "Automated emails that re-engage with potential renters who missed and or cancelled tours. The emails highlight key benefits and add personalized incentives to bring leads back.",
     example: {
       type: "email",
       title: "Automated Recovery Email Example",
