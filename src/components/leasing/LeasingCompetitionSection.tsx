@@ -1,27 +1,20 @@
 
 import React from 'react';
-import { TrendingUp, Building, Clock } from 'lucide-react';
+import { X, Check } from 'lucide-react';
 
 const LeasingCompetitionSection = () => {
-  const benefits = [
-    {
-      icon: <TrendingUp className="w-12 h-12 text-blue-600" />,
-      title: "Boost Occupancy Rates",
-      description: "More leases through automation",
-      detail: "Increase your tour-to-lease conversion by automatically filling cancelled slots with recovered prospects."
-    },
-    {
-      icon: <Building className="w-12 h-12 text-purple-600" />,
-      title: "Leasing Office Expertise", 
-      description: "Built specifically for apartment communities",
-      detail: "Custom-designed for leasing consultants, property managers, and resident relations teams."
-    },
-    {
-      icon: <Clock className="w-12 h-12 text-green-600" />,
-      title: "Quick Implementation",
-      description: "Fully integrated in under 24 hours",
-      detail: "Connect to your existing property management system and start recovering revenue immediately."
-    }
+  const withoutItems = [
+    "Missed tours go unanswered",
+    "Leasing agents follow up manually", 
+    "Lost rent adds up quietly",
+    "No insight into renter behavior"
+  ];
+
+  const withItems = [
+    "Automated SMS and email based on renter intent",
+    "No-shows re-engage without effort",
+    "Calendar fills with recovered appointments", 
+    "AI insights improve future rebooking strategy"
   ];
 
   return (
@@ -29,33 +22,58 @@ const LeasingCompetitionSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-inter">
-            How We Help Your Property Outperform Competitors
+            What Missed Tour Recovery Looks Like With and Without ReslotAI
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-inter">
-            Stay ahead with automated systems that work around the clock to maximize your apartment tours
-          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {benefits.map((benefit, index) => (
-            <div
-              key={index}
-              className="text-center p-8 rounded-2xl bg-gray-50 hover:bg-gray-100 transition-all transform hover:scale-105"
-            >
-              <div className="flex justify-center mb-6">
-                {benefit.icon}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Without ReslotAI */}
+            <div className="bg-white border-2 border-gray-200 rounded-2xl p-8">
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <X className="w-8 h-8 text-red-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 font-inter">
+                  Without ReslotAI
+                </h3>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 font-inter">
-                {benefit.title}
-              </h3>
-              <p className="text-lg text-gray-600 mb-4 font-inter font-semibold">
-                {benefit.description}
-              </p>
-              <p className="text-sm text-gray-500">
-                {benefit.detail}
-              </p>
+              
+              <div className="space-y-4">
+                {withoutItems.map((item, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-red-400 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-gray-700 font-inter leading-relaxed">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+
+            {/* With ReslotAI */}
+            <div className="bg-white border-2 border-green-200 rounded-2xl p-8">
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Check className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 font-inter">
+                  With ReslotAI
+                </h3>
+              </div>
+              
+              <div className="space-y-4">
+                {withItems.map((item, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-gray-700 font-inter leading-relaxed">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
