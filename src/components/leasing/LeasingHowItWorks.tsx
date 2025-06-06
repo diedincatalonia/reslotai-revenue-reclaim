@@ -16,7 +16,7 @@ const LeasingHowItWorks = () => {
   }, {
     icon: <MessageSquare className="w-12 h-12 text-purple-600" />,
     title: "Instant SMS Outreach",
-    description: "Remind and reschedule via text automatically",
+    description: "Send branded texts that instantly address renter objections",
     detail: "Intelligent text messaging that responds to prospect needs and reschedules instantly.",
     example: {
       type: "sms",
