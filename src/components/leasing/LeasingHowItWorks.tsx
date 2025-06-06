@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Mail, MessageSquare, BarChart3, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -32,7 +33,7 @@ const LeasingHowItWorks = () => {
       icon: <BarChart3 className="w-12 h-12 text-green-600" />,
       title: "AI-Driven Insights",
       description: "Short high-engagement surveys that help uncover why cancellations occur",
-      detail: "Track patterns and optimize your leasing process based on real prospect behavior.",
+      detail: "Based on their responses Reslot can trigger a customized offer, all editable by you to match your strategy and business goals, while the bot uses machine learning to improve throughout each interaction with data you can visualize.",
       example: {
         type: "insights",
         title: "AI-Driven Prospect Insights Dashboard",
