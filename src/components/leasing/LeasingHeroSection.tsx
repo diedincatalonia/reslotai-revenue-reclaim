@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 const LeasingHeroSection = () => {
@@ -15,9 +16,9 @@ const LeasingHeroSection = () => {
           {/* Left Content */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-6xl font-inter font-bold text-white mb-6 animate-fade-in">
-              Stop Losing Leases to{' '}
+              Leasing software that helps you{' '}
               <span className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent">
-                No-Shows
+                recover missed tours automatically
               </span>
             </h1>
 
@@ -34,7 +35,7 @@ const LeasingHeroSection = () => {
 
             {/* Trust indicators */}
             <div className="animate-slide-up">
-              <p className="text-gray-300 text-sm mb-4 font-inter">Trusted by 180+ apartment communities</p>
+              <p className="text-gray-300 text-sm mb-4 font-inter">Trusted by 35 apartment communities</p>
               <div className="flex flex-wrap justify-center lg:justify-start items-center gap-6 opacity-60">
                 {['Skyline Apartments', 'Metro Living', 'Park View Complex', 'Urban Heights'].map((company, index) => <div key={index} className="bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
                     <span className="text-white font-medium text-sm">{company}</span>
