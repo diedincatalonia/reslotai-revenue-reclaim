@@ -29,7 +29,7 @@ const LeasingRevenueCalculator = () => {
           <div className="text-center mb-12">
             <Calculator className="w-16 h-16 text-blue-600 mx-auto mb-4" />
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-inter">
-              Calculate how much you could recover using ReslotAI alongside your property management software
+              Estimate recovered revenue with ReslotAI and your property management software
             </h2>
             <p className="text-xl text-gray-600 font-inter">
               See how much revenue you could recover from missed apartment tours
